@@ -1,0 +1,213 @@
+html, body {
+  font-family: 'Capriola', sans-serif; 
+  background-color: #100E1D;
+  color:#fff;
+}
+h1,
+h2,
+p,
+pre {
+  margin: 0;
+}
+h1, h2, h3 {
+	text-transform: capitalize;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-top: 100px;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+button {
+  border: none;
+  box-shadow: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+button{
+	background-color:transparent;
+}
+
+.icon-arrow-right{
+	max-width:30px;
+}
+
+.progress-bar {
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.progress-bar.green .progress{
+	background-color: #A9FF53;
+}
+.progress-bar.yellow .progress{
+	background-color: #FAFF00;
+}
+
+.progress-bar-wrapper {
+	position: relative;
+	margin: 25px auto;
+}
+
+.progress-bar-wrapper::before{
+	content: '0';
+	position: absolute;
+	left: 0;
+	top: 10px;
+	font-size: 1rem;
+}
+
+.progress-bar-wrapper::after{
+	content: '100';
+	position: absolute;
+	right: 0;
+	top: 10px;
+	font-size: 1rem;
+}
+
+.progress-bar-wrapper .unit {
+	position: absolute;
+	top:-22px;
+	right:0;
+}
+
+.progress {
+  height: 8px;
+  border-radius: 4px;
+}
+
+.left-column {
+	height: 100%;
+	background: #1E213A;
+	padding: 40px 10px;
+	color: #fff;
+}
+
+.left-column .date{
+	font-size: 1.5rem;
+}
+
+.left-column .temp {
+	font-size: 5rem;
+}
+
+.left-column .temp .unit {
+	font-size: 1.6rem;
+}
+
+.left-column .conditions {
+	font-size: 2rem;
+}
+
+.left-column .weather-icon {
+	width: 176px;
+}
+
+.right-column {
+	padding: 25px 50px;
+}
+.text-right {
+	text-align: right;
+}
+.text-left {
+	text-align: left;
+}
+.float-left {
+	float: left;
+}
+
+.icon-unit {
+	width: 38px;
+}
+
+input {
+	border-radius: 5px;
+  max-width: 303px;
+  margin: 0 10px 0;
+}
+
+input.search {
+	width: calc(100% - 62px);
+  max-width: 300px;
+  padding: 5px;
+}
+
+.box{
+	border-radius: 15px;
+  background: #1E213A;
+  margin: 10px;
+  padding: 20px;
+  width :calc(100% - 20px);
+  height :calc(100% - 20px);
+  text-align: center;
+  position: relative;
+}
+
+.box .data{
+	font-size:2rem;
+}
+
+.box .data.small{
+	font-size:1rem;
+	margin-bottom: 50px;
+}
+
+.box .data.conditions.small{
+	font-size:0.8rem;
+
+}
+
+.box .bottom {
+	position: absolute;
+	bottom: 20px;
+}
+
+
+.box .bottom.left {
+	left: calc(10px);
+}
+.box .bottom.right {
+	right: calc(10px);
+}
+
+
+.weather-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  margin: 0;
+  margin: 20px auto;
+}
+
+.weather-icon-wrapper img.weather-icon {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+.weather-icon {
+  margin: 25px auto;
+}
+
+
+@media screen and (min-width: 1300px) {
+
+	.col-xl-20percent {
+    width: 20%;
+	}
+
+} 
+
