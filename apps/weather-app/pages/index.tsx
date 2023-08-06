@@ -83,14 +83,12 @@ function Index() {
 	      fetchWeatherData(search, unit);
 	    }, 500);
 
-	    // Save the timer ID in state
 	    setTimerId(newTimerId);
 	  }
 	};
 
 	const formatAPIResponseDate = (dateString) => {
-	  // The date format returned by the API for Japanese cities is different, so we need to parse it manually
-	  const [year, month, day] = dateString.split("-"); // Assuming the date format is YYYY-MM-DD
+	  const [year, month, day] = dateString.split("-"); 
 	  return `${day}/${month}/${year}`;
 	};
  const fetchWeatherData = (location: string, unit: string | undefined = "") => {
@@ -109,13 +107,11 @@ function Index() {
         return res.json();
       })
       .then((result) => {
-        // Filter today's data from the forecast and store it in state
         const currentDate = new Date().toISOString().split("T")[0];
         const today = result?.days?.find((day) => day.datetime.startsWith(currentDate));
         setTodayData(today);
-        console.log('today data:'+todayData);
-
-        // Filter the forecast data to get the data for the next 5 days (starting from tomorrow)
+				setWeather(result);
+      
         const tomorrow = new Date();
         tomorrow.setDate(tomorrow.getDate());
         const nextFiveDaysForecast = result?.days?.filter((day) => {
@@ -127,8 +123,7 @@ function Index() {
         setForecast(nextFiveDaysForecast);
       })
       .catch((error) => {
-        // console.error("Error fetching weather data:", error.message);
-        // You can handle the error here, for example, you can set a state variable to display an error message on the UI
+         console.error("Error fetching weather data:", error.message);
       });
   };
 
