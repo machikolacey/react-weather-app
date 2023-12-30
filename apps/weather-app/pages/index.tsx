@@ -111,10 +111,10 @@ function Index() {
         return res.json();
       })
       .then((result) => {
-        const currentDate = new Date().toISOString().split("T")[0];
-        const today = result?.days?.find((day) => day.datetime.startsWith(currentDate));
-        setTodayData(today);
-				setWeather(result);
+			  const currentDate = new Date().toISOString().split("T")[0];
+			  const today = result?.days?.find((day: { datetime: string }) => day.datetime.startsWith(currentDate));
+			  setTodayData(today);
+			  setWeather(result);
       
         const tomorrow = new Date();
         tomorrow.setDate(tomorrow.getDate());
