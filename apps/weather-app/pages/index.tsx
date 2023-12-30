@@ -46,7 +46,7 @@ function convertConditionsToKeys(conditions: string) {
   return conditionKeys;
 }
 
-function getSVGForCondition(icon) {
+function getSVGForCondition(icon: string) {
   return icon || null;
 }
 
