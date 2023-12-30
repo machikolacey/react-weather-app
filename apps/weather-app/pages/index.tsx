@@ -23,7 +23,7 @@ const formatTime = (timeString: string) => {
 	}
 	return timeString;
 };
-const formatDate = (dateString: Date) => {
+const formatDate = (dateString: string) => {
   const date = new Date(dateString);
   if (isNaN(date.getTime())) {
     return "Invalid date";
@@ -37,7 +37,7 @@ const formatDate = (dateString: Date) => {
 };
 
 const todayDate = formatDate(new Date());
-function convertConditionsToKeys(conditions) {
+function convertConditionsToKeys(conditions: string) {
   const conditionKeys = conditions.toLowerCase().split(',').map((condition) => condition.trim());
   return conditionKeys;
 }
