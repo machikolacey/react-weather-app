@@ -23,20 +23,24 @@ const formatTime = (timeString: string) => {
 	}
 	return timeString;
 };
-const formatDate = (dateString: string) => {
-  const date = new Date(dateString);
-  if (isNaN(date.getTime())) {
+const formatDate = (date: string | Date) => {
+  const inputDate = typeof date === 'string' ? new Date(date) : date;
+
+  if (isNaN(inputDate.getTime())) {
     return "Invalid date";
   }
+
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  const day = days[date.getDay()];
-  const dayOfMonth = date.getDate();
+  const day = days[inputDate.getDay()];
+  const dayOfMonth = inputDate.getDate();
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  const month = months[date.getMonth()];
+  const month = months[inputDate.getMonth()];
+
   return `${day}, ${dayOfMonth} ${month}`;
 };
 
 const todayDate = formatDate(new Date());
+
 function convertConditionsToKeys(conditions: string) {
   const conditionKeys = conditions.toLowerCase().split(',').map((condition) => condition.trim());
   return conditionKeys;
