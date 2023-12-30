@@ -23,7 +23,7 @@ const formatTime = (timeString: string) => {
 	}
 	return timeString;
 };
-const formatDate = (dateString: string) => {
+const formatDate = (dateString: Date) => {
   const date = new Date(dateString);
   if (isNaN(date.getTime())) {
     return "Invalid date";
