@@ -118,10 +118,10 @@ function Index() {
       
         const tomorrow = new Date();
         tomorrow.setDate(tomorrow.getDate());
-        const nextFiveDaysForecast = result?.days?.filter((day) => {
-          const forecastDate = new Date(day.datetime);
-          return forecastDate >= tomorrow;
-        });
+				const nextFiveDaysForecast = result?.days?.filter((day: { datetime: string }) => {
+				  const forecastDate = new Date(day.datetime);
+				  return forecastDate >= tomorrow;
+				});
     
         // Set the forecast for the next 5 days in state
         setForecast(nextFiveDaysForecast);
