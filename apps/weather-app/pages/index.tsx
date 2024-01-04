@@ -119,9 +119,10 @@ function Index() {
         const tomorrow = new Date();
         tomorrow.setDate(tomorrow.getDate());
 				const nextFiveDaysForecast = result?.days?.filter((day: { datetime: string }) => {
-				  const forecastDate = new Date(day.datetime);
-				  return forecastDate >= tomorrow;
-				});
+			  const forecastDate = new Date(day.datetime);
+			  return forecastDate >= tomorrow;
+			}) as { datetime: string }[];
+
     
         // Set the forecast for the next 5 days in state
         setForecast(nextFiveDaysForecast);
@@ -280,7 +281,7 @@ function Index() {
 									  {forecast.length > 0 ? (
 						          <div className="row">
 						            {/* The first element in forecast array is tomorrow's data */}
-						            <div className="col-xl-20percent col-lg-4 col-sm-6" key={forecast[0].datetime}>
+						            <div className="col-xl-20percent col-lg-4 col-sm-6" key={(forecast[0] as { datetime: string }).datetime}>
 						              <div className="box">
 						                <h3 className="date">{formatDate(forecast[0].datetime)}</h3>
 
